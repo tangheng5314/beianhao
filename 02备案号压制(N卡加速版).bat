@@ -4,8 +4,7 @@ REM 预设的当前本地版本
 SET local_version=1.0.0
 
 REM 通过 curl 获取 Github 上的版本信息
-curl https://raw.githubusercontent.com/username/repo/main/version.txt -o server_version.txt
-
+curl https://raw.githubusercontent.com/tangheng5314/beianhao/main/version.txt
 REM 读取服务器上的版本信息
 SET /p server_version=<server_version.txt
 
