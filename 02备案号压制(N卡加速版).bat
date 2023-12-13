@@ -1,46 +1,69 @@
 @echo off
-title ±¸°¸ºÅÅúÁ¿Ñ¹ÖÆ(N¿¨¼ÓËÙ°æ)
+
+REM é¢„è®¾çš„å½“å‰æœ¬åœ°ç‰ˆæœ¬
+SET local_version=1.0.0
+
+REM é€šè¿‡ curl è·å– Github ä¸Šçš„ç‰ˆæœ¬ä¿¡æ¯
+curl https://raw.githubusercontent.com/username/repo/main/version.txt -o server_version.txt
+
+REM è¯»å–æœåŠ¡å™¨ä¸Šçš„ç‰ˆæœ¬ä¿¡æ¯
+SET /p server_version=<server_version.txt
+
+REM æ¯”è¾ƒç‰ˆæœ¬
+IF NOT "%local_version%"=="%server_version%" (
+    REM å¦‚æœæœåŠ¡å™¨ç‰ˆæœ¬æ–°ï¼Œä¸‹è½½æ–°çš„ bat æ–‡ä»¶
+    curl https://raw.githubusercontent.com/username/repo/main/my_script.bat -o my_script.bat
+  
+    REM æ˜¾ç¤ºæ›´æ–°æˆåŠŸçš„ä¿¡æ¯
+    echo Update successful.
+  
+    REM å¯ä»¥åœ¨æ­¤å¤„æ·»åŠ å…¶å®ƒå¿…è¦çš„æ“ä½œ
+)
+
+REM ç»§ç»­æ‰§è¡Œä½ å…¶å®ƒçš„ä»£ç 
+echo Running the rest of your script...
+title å¤‡æ¡ˆå·æ‰¹é‡å‹åˆ¶(Nå¡åŠ é€Ÿç‰ˆ)
 echo=
 echo=
-echo      ±¸°¸ºÅÅúÁ¿Ñ¹ÖÆ (N¿¨¼ÓËÙ°æ)
+echo      å¤‡æ¡ˆå·æ‰¹é‡å‹åˆ¶ (Nå¡åŠ é€Ÿç‰ˆ)
 echo=
 echo=
-echo      ¸üĞÂÈÕÆÚ£º2023Äê12ÔÂ13ÈÕ
+echo      æ›´æ–°æ—¥æœŸï¼š2023å¹´12æœˆ13æ—¥
 echo=
 echo=
-echo      ´Ë°æ±¾ÊÊÓÃÓÚÆÕÍ¨±¸°¸ºÅµÄÑ¹ÖÆ£¬ÏÔ¿¨±ØĞëÎªNVIDIAÏµÁĞ
+echo      æ­¤ç‰ˆæœ¬é€‚ç”¨äºæ™®é€šå¤‡æ¡ˆå·çš„å‹åˆ¶ï¼Œæ˜¾å¡å¿…é¡»ä¸ºNVIDIAç³»åˆ—
 echo=
 echo=
-echo      ¹Ì¶¨Êä³öÊÓÆµÂëÂÊÎª6000k
+echo      å›ºå®šè¾“å‡ºè§†é¢‘ç ç‡ä¸º6000k
 echo=
 echo=
-echo     ²¿·ÖÊÓÆµÂ©¼Ó»òÕßÌí¼Ó²»ÉÏ±¸°¸ºÅ£¬Ô­ÒòÊÇÔ­ÊÓÆµ²»ÊÇ1920*1080£¬ÇëÊ¹ÓÃ¡¾03ÉèÖÃ·Ö±æÂÊÎª1080P.bat¡¿½øĞĞ´¦Àí
+echo     éƒ¨åˆ†è§†é¢‘æ¼åŠ æˆ–è€…æ·»åŠ ä¸ä¸Šå¤‡æ¡ˆå·ï¼ŒåŸå› æ˜¯åŸè§†é¢‘ä¸æ˜¯1920*1080ï¼Œè¯·ä½¿ç”¨ã€03è®¾ç½®åˆ†è¾¨ç‡ä¸º1080P.batã€‘è¿›è¡Œå¤„ç†
 echo=
 echo=
 set shichang=7
 set geshi=*.mp4 *.mov
-set var1=±¸°¸ºÅ£º
-set /p var2=ÇëÊäÈë±¸°¸ºÅ£¨ÀıÈç£º0108283210604010£©:
-set /p shichang=ÇëÊäÈë±¸°¸ºÅ³ÖĞøÊ±¼ä£¨Èç£º5£¬×îµÍÊ±³¤²»µÃµÍÓÚ5Ãë£©£¨Ò²¿ÉÖ±½Ó»Ø³µÌø¹ı´Ë²½ÖèÊ¹ÓÃÄ¬ÈÏÖµ£º7Ãë£©£º
+set var1=å¤‡æ¡ˆå·ï¼š
+set /p var2=è¯·è¾“å…¥å¤‡æ¡ˆå·ï¼ˆä¾‹å¦‚ï¼š0108283210604010ï¼‰:
+set /p shichang=è¯·è¾“å…¥å¤‡æ¡ˆå·æŒç»­æ—¶é—´ï¼ˆå¦‚ï¼š5ï¼Œæœ€ä½æ—¶é•¿ä¸å¾—ä½äº5ç§’ï¼‰ï¼ˆä¹Ÿå¯ç›´æ¥å›è½¦è·³è¿‡æ­¤æ­¥éª¤ä½¿ç”¨é»˜è®¤å€¼ï¼š7ç§’ï¼‰ï¼š
 
 
-md ±¸°¸ºÅÊä³ö
+md å¤‡æ¡ˆå·è¾“å‡º
  
-echo ÕıÔÚ½øĞĞ±¸°¸ºÅÊä³öÇëÉÔºó¡£¡£¡£
+echo æ­£åœ¨è¿›è¡Œå¤‡æ¡ˆå·è¾“å‡ºè¯·ç¨åã€‚ã€‚ã€‚
  
 for %%a in (%geshi%) do (
-	echo µ±Ç°ÕıÔÚ½øĞĞµÄÊÓÆµ£º%%a
+	echo å½“å‰æ­£åœ¨è¿›è¡Œçš„è§†é¢‘ï¼š%%a
 
-	ffmpeg -c:v h264_cuvid -threads 20 -i "%%a" -filter_complex "drawtext=fontfile=C\\:/Windows/logo/SH.otf:text='%var1%%var2%':x=1300:y=900:fontsize=41:fontcolor=fafafa:shadowy=3:bordercolor=000000:borderw=1:enable='between(t,0,%shichang%)'" -b:v 6000k -c:v h264_nvenc "±¸°¸ºÅÊä³ö\%%~na.mp4" 
+	ffmpeg -c:v h264_cuvid -threads 20 -i "%%a" -filter_complex "drawtext=fontfile=C\\:/Windows/logo/SH.otf:text='%var1%%var2%':x=1300:y=900:fontsize=41:fontcolor=fafafa:shadowy=3:bordercolor=000000:borderw=1:enable='between(t,0,%shichang%)'" -b:v 6000k -c:v h264_nvenc "å¤‡æ¡ˆå·è¾“å‡º\%%~na.mp4" 
 )
-start ±¸°¸ºÅÊä³ö
+start å¤‡æ¡ˆå·è¾“å‡º
 echo=
 echo=
-echo ±¸°¸ºÅÑ¹ÖÆÍê³É£¡
+echo å¤‡æ¡ˆå·å‹åˆ¶å®Œæˆï¼
 echo=
-echo ÕıÔÚ´ò¿ªµ±Ç°Ä¿Â¼ÏÂµÄ¡¾±¸°¸ºÅÊä³ö¡¿ÎÄ¼ş¼Ğ¡£¡£¡£¡£¡£¡£
+echo æ­£åœ¨æ‰“å¼€å½“å‰ç›®å½•ä¸‹çš„ã€å¤‡æ¡ˆå·è¾“å‡ºã€‘æ–‡ä»¶å¤¹ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚
 echo=
 echo=
-echo Çë°´ÈÎÒâ¼üÍË³ö
+echo è¯·æŒ‰ä»»æ„é”®é€€å‡º
  
 pause
