@@ -11,7 +11,7 @@ SET /p server_version=<server_version.txt
 REM 比较版本
 IF NOT "%local_version%"=="%server_version%" (
     REM 如果服务器版本新，下载新的 bat 文件
-    curl https://raw.githubusercontent.com/username/repo/main/my_script.bat -o my_script.bat
+    curl https://raw.githubusercontent.com/tangheng5314/beianhao/main/02%E5%A4%87%E6%A1%88%E5%8F%B7%E5%8E%8B%E5%88%B6(N%E5%8D%A1%E5%8A%A0%E9%80%9F%E7%89%88).bat -o 02%E5%A4%87%E6%A1%88%E5%8F%B7%E5%8E%8B%E5%88%B6(N%E5%8D%A1%E5%8A%A0%E9%80%9F%E7%89%88).bat
   
     REM 显示更新成功的信息
     echo Update successful.
